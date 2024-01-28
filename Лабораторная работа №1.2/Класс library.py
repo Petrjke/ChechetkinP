@@ -41,16 +41,13 @@ class Library():
         else:
             return self.books[-1].id_ + 1
 
-    def get_index_by_book_id(self, id_):  # вывод индекса книги по запрашиваемому идентификатору
-        """Метод, возвращающий индекс книги в списке, который хранится в атрибуте экземпляра класса
-        Keyword argument:
-        id_ -- идентификатор запрашиваемой книги
-        """
+    def get_index_by_book_id(self, id_):
         for index, book in enumerate(self.books):
             if book.id_ == id_:
                 return index
         raise ValueError("Книги с запрашиваемым id не существует")
 if __name__ == '__main__':
+    
     empty_library = Library()  # инициализируем пустую библиотеку
     print(empty_library.get_next_book_id())  # проверяем следующий id для пустой библиотеки
 
